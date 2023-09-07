@@ -31,7 +31,6 @@ const carrito = [
 let totalCarrito = document.getElementById("totalCarrito")
 
 
-
 //Mostrar el carrito de la compra
 
 
