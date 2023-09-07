@@ -28,3 +28,13 @@ const carrito = [
         premium: false
     }
 ];
+let totalCarrito = document.getElementById("totalCarrito")
+
+
+
+//Mostrar el carrito de la compra
+
+
+for (let product of carrito) {
+    totalCarrito.innerHTML += `<li style= "list-style:none; margin:8px;">${product.id}, ${product.name},${product.price}, ${product.count},  ${product.premium}</li>`;
+}
