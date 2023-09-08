@@ -29,6 +29,7 @@ const carrito = [
     }
 ];
 let totalCarrito = document.getElementById("totalCarrito")
+let calculation = []
 
 
 //Mostrar el carrito de la compra y listar los productos
@@ -55,5 +56,19 @@ const deleteProduct = (id) => {
     });
 }
 deleteProduct(54657)
+//Calcular el total del carrito de la compra (el coste de una línea es precio * cantidad).OJO: ahora solo hay tres productos en el carrito!!
+
+for (let element of carrito) {
+    calculation.push(element.count * element.price)
+
+}
+let sum = 0
+for (const value of calculation) {
+    sum += value;
+} console.log(sum);
+
+
+
+
 
 
