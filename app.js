@@ -67,7 +67,16 @@ for (const value of calculation) {
     sum += value;
 } console.log(sum);
 
+//Filtrar por los productos que sean prime.
+for (let element of carrito) {
+    if (element.premium) {
+        console.log(element)
+    }
 
+}
+//Alternativa
+const primeProducts = carrito.filter((primeProduct) => primeProduct.premium === true)
+console.log(primeProducts)
 
 
 
