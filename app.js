@@ -31,7 +31,7 @@ const carrito = [
 let totalCarrito = document.getElementById("totalCarrito")
 
 
-//Mostrar el carrito de la compra
+//Mostrar el carrito de la compra y listar los productos
 
 const products = []
 for (let element of carrito) {
@@ -46,3 +46,14 @@ const renderProducts = (products) => {
     });
 }
 renderProducts(carrito)
+
+//Eliminar el producto con id 54657 del carrito de la compra.
+const deleteProduct = (id) => {
+    products.forEach(product => {
+        if (product === id)
+            carrito.splice(2, 1)
+    });
+}
+deleteProduct(54657)
+
+
