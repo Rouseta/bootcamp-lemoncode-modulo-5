@@ -40,13 +40,13 @@ for (let element of carrito) {
 
 }
 
-const renderProducts = (products) => {
+const renderCarrito = (products) => {
     products.forEach(product => {
         totalCarrito.innerHTML += `<ul><li style= "list-style:none; margin:8px;">${product.id}, ${product.name},${product.price}, ${product.count},  ${product.premium}</li></ul>`;
 
     });
 }
-renderProducts(carrito)
+renderCarrito(carrito) // Mostrar el carrito en un listado de html básico.
 
 //Eliminar el producto con id 54657 del carrito de la compra.
 const deleteProduct = (id) => {
@@ -78,6 +78,30 @@ for (let element of carrito) {
 const primeProducts = carrito.filter((primeProduct) => primeProduct.premium === true)
 console.log(primeProducts)
 
+//Si todos los productos son prime mostrar un mensaje "Pedido sin gastos de envío", si no "Este pedido
+//tiene gastos de envío.
+for (let element of carrito) {
+    if (element.premium) {
+        console.log("Pedido sin gastos de envío")
+    } else {
+        console.log("Este pedido tiene gastos de envío")
+    }
+
+}
+
+//Aplicar un descuento del 5% si la compra es mayor de 100 €.
+const applyDiscount = (sum) => {
+    let discount = 0
+    totalPrice = 0
+    if (Number(sum) > 100) {
+        discount = (Number(sum) * 5) / 100
+        totalPrice = sum - discount
+
+    }
+    console.log(totalPrice)
+
+}
+applyDiscount(150)
 
 
 
