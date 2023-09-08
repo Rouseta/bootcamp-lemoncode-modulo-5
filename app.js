@@ -33,7 +33,16 @@ let totalCarrito = document.getElementById("totalCarrito")
 
 //Mostrar el carrito de la compra
 
+const products = []
+for (let element of carrito) {
+    products.push(element.id, element.name, element.price, element.count, element.premium)
 
-for (let product of carrito) {
-    totalCarrito.innerHTML += `<li style= "list-style:none; margin:8px;">${product.id}, ${product.name},${product.price}, ${product.count},  ${product.premium}</li>`;
 }
+
+const renderProducts = (products) => {
+    products.forEach(product => {
+        totalCarrito.innerHTML += `<ul><li style= "list-style:none; margin:8px;">${product.id}, ${product.name},${product.price}, ${product.count},  ${product.premium}</li></ul>`;
+
+    });
+}
+renderProducts(carrito)
